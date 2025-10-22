@@ -17,21 +17,21 @@ def generate_sequence(num):
   f_sequence = []
   a, b = 0, 1
   for _ in range(num):
-    sequence.append(a)
-    a = b
-    b = a + b
+    f_sequence.append(a)
+    a, b = b, a + b
   return f_sequence
 
 # Printing the sequence.
-def print_sequence(f_sequence)
-  print("\n Fibonacci Sequence: ")
-  for num in sequece:
+def print_sequence(f_sequence):
+  print("\nFibonacci Sequence: ")
+  for num in f_sequence:
     print(num, end = " ")
+  print()
 
 # Calling on each function to get input, generate the sequence, and print the sequence.
 def main():
   num_of_terms = validation()
   f_sequence = generate_sequence(num_of_terms)
   print_sequence (f_sequence)
-
+  
 main()
