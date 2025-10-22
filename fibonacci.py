@@ -6,11 +6,15 @@
 # Validating and returning user input.
 def validation():
   while True:
-    num_of_terms = int(input("Enter a positive integer: "))
-    if num_of_terms <=0:
-      print("Error: Please enter a positive integer.")
-    else:
-      return num_of_terms
+    try:
+      num_of_terms = int(input("Enter a positive integer: "))
+      if num_of_terms <=0:
+        print("Error: Please enter a positive integer.")
+      else:
+        return num_of_terms
+    except ValueError:
+            print("Error: Invalid input. Please enter an integer.")
+
 
 # Generating the Fibonacci sequence.
 def generate_sequence(num):
