@@ -33,4 +33,5 @@ def main():
   num_of_terms = validation()
   f_sequence = generate_sequence(num_of_terms)
   print_sequence (f_sequence)
-  
+
+main()
