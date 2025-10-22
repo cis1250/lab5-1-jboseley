@@ -38,10 +38,10 @@ def calculate_frequencies(sentence):
     sentence = sentence.lower()
     for char in ".,?!:;'\"(){}[]":
         sentence = sentence.replace(char, "")
-    words = user_sentence.split()
+    words = sentence.split()
     unique_words = []
     frequencies = []
-    for word in updated_words:
+    for word in words:
         if word in unique_words:
             index = unique_words.index(word)
             frequencies[index] += 1
@@ -51,13 +51,15 @@ def calculate_frequencies(sentence):
     return unique_words, frequencies
     
 # To display the results.
-def print_frequencies(word, frequencies):
+def print_frequencies(words, frequencies):
     print("\nWord Frequencies:")
-for i in range(len(word)):
-    print(word[i], ":", frequencies[i]) 
+    for i in range(len(words)):
+        print(words[i], ":", frequencies[i]) 
 
 # Calls on functions to get a set sentence as input and calclate the frequency of each word in the sentence.
 def main():
     user_sentence = get_sentence()
-    words, frequencies = calculate_frequencies(sentence)
+    words, frequencies = calculate_frequencies(user_sentence)
     print_frequencies(words, frequencies)
+
+main()
